@@ -1,1 +1,3 @@
-| Harro
+= simple_form_for(Article.new, html: { class: 'form-horizontal' }) do |form|
+  = form.input :title
+  = form.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
