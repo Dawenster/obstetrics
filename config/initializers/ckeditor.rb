@@ -30,10 +30,10 @@ Ckeditor.setup do |config|
 
   # Customize ckeditor assets path
   # By default: nil
-  config.asset_path = "https://s3-us-west-2.amazonaws.com/obstetrics/"
+  # config.asset_path = "https://s3-us-west-2.amazonaws.com/obstetrics/"
 
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
-  config.assets_languages = ['en', 'uk']
+  # config.assets_languages = ['en', 'uk']
   # config.assets_plugins = ['image', 'smiley']
 end
