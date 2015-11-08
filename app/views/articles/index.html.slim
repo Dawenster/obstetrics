@@ -1,2 +1,7 @@
 - @articles.each do |article|
-  = link_to article.title, article_path(article)
+  .list-group
+    a.list-group-item href="#{article_path(article)}"
+      h4.list-group-item-heading
+        = article.title
+      p.list-group-item-text
+        = truncate(strip_tags(article.content), length: 100)
