@@ -10,6 +10,7 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks'
+gem "twitter-bootstrap-rails"
 gem 'uglifier', '>= 1.3.0'
 
 group :doc do
