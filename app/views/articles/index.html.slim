@@ -1,3 +1,2 @@
-= simple_form_for(Article.new, html: { class: 'form-horizontal' }) do |form|
-  = form.input :title
-  = form.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+- @articles.each do |article|
+  = link_to article.title, article_path(article)
