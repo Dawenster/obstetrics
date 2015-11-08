@@ -21,7 +21,7 @@ Ckeditor.setup do |config|
   # config.authorize_with :cancan
 
   # Asset model classes
-  # config.picture_model { Ckeditor::Picture }
+  config.picture_model { Ckeditor::Picture }
   # config.attachment_file_model { Ckeditor::AttachmentFile }
 
   # Paginate assets
@@ -30,7 +30,7 @@ Ckeditor.setup do |config|
 
   # Customize ckeditor assets path
   # By default: nil
-  # config.asset_path = "http://www.example.com/assets/ckeditor/"
+  config.asset_path = "https://s3-us-west-2.amazonaws.com/obstetrics/"
 
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
