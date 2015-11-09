@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Article successfully created!"
-      redirect_to articles_path
+      redirect_to article_path(@article)
     else
       flash.now[:alert] = @article.errors.full_messages.to_sentence
       render "new"
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
     @article.assign_attributes(article_params)
     if @article.save
       flash[:notice] = "Article successfully saved!"
-      redirect_to articles_path
+      redirect_to article_path(@article)
     else
       flash.now[:alert] = @article.errors.full_messages.to_sentence
       render "edit"
