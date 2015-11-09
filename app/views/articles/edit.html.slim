@@ -4,3 +4,7 @@
       | Edit article
 
     = render "form"
+
+    br
+    
+    = link_to "Delete".html_safe, { :id => @article.id, :action => :destroy }, :method => :delete, data: { confirm: "Are you sure?  You're about to delete this article..." }
