@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'angularjs-rails'
 gem 'aws-sdk', '< 2.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'coffee-rails', '~> 4.1.0'
