@@ -5,10 +5,6 @@ ul.article-list {
     position: relative;
     list-style-type: none;
 
-    &:active, &:hover, &:focus {
-      list-style-type: none;
-    }
-
     .action-links {
       position: absolute;
       top: 10px;

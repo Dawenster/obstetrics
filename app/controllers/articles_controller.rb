@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order("title ASC")
+    @articles = Article.rank(:row_order).all
   end
 
   def show
@@ -35,6 +35,14 @@ class ArticlesController < ApplicationController
     else
       flash.now[:alert] = @article.errors.full_messages.to_sentence
       render "edit"
+    end
+  end
+
+  def drag_update
+    respond_to do |format|
+      @article = Article.find(params[:article_id])
+      @article.update_attribute :row_order_position, params[:index]
+      format.json { render :json => { :status => "success" } }
     end
   end
 

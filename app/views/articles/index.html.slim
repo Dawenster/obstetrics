@@ -1,6 +1,6 @@
 ul.article-list ng-controller="ArticlesListCtrl"
   - @articles.each do |article|
-    li.article-list-item
+    li.article-list-item data-url="#{article_drag_update_path(article.id)}"
       .list-group
         a.list-group-item href="#{article_path(article)}"
           h4.list-group-item-heading
