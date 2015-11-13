@@ -1,0 +1,23 @@
+{
+  "name": "obstetrics",
+  "homepage": "https://github.com/Dawenster/obstetrics",
+  "authors": [
+    "David Wen <dstwen@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
