@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require twitter/bootstrap
+//= require html.sortable/dist/html.sortable.min.js
 //= require_tree .

@@ -1,14 +1,23 @@
-.article-list-item {
-  position: relative;
+ul.article-list {
+  padding: 0px;
+  
+  .article-list-item {
+    position: relative;
+    list-style-type: none;
 
-  .action-links {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+    &:active, &:hover, &:focus {
+      list-style-type: none;
+    }
 
-    a {
-      margin-left: 5px;
+    .action-links {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+
+      a {
+        margin-left: 5px;
+      }
     }
   }
 }
