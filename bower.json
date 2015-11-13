@@ -18,6 +18,6 @@
     "tests"
   ],
   "dependencies": {
-
+    "html.sortable": "~0.3.0"
   }
 }
