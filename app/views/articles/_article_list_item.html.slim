@@ -1,0 +1,11 @@
+li.article-list-item data-url="#{article_drag_update_path(article.id)}"
+  .list-group
+    a.list-group-item href="#{article_path(article)}"
+      h4.list-group-item-heading
+        = article.title
+      p.list-group-item-text
+        = truncate(strip_tags(article.content), length: 100)
+  .action-links 
+    a href="#{edit_article_path(article)}"
+      i.fa.fa-pencil-square-o
+    = link_to "<i class='fa fa-trash-o'></i>".html_safe, { :id => article.id, :action => :destroy }, :method => :delete, data: { confirm: "Are you sure?  You're about to delete this article..." }

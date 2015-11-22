@@ -1,13 +1,17 @@
-ul.article-list ng-controller="ArticlesListCtrl"
-  - @articles.each do |article|
-    li.article-list-item data-url="#{article_drag_update_path(article.id)}"
-      .list-group
-        a.list-group-item href="#{article_path(article)}"
-          h4.list-group-item-heading
-            = article.title
-          p.list-group-item-text
-            = truncate(strip_tags(article.content), length: 100)
-      .action-links 
-        a href="#{edit_article_path(article)}"
-          i.fa.fa-pencil-square-o
-        = link_to "<i class='fa fa-trash-o'></i>".html_safe, { :id => article.id, :action => :destroy }, :method => :delete, data: { confirm: "Are you sure?  You're about to delete this article..." }
+ul.major-sections-list ng-controller="MajorSectionsListCtrl"
+  - @major_sections.each do |major_section|
+    li data-url="#{major_section_drag_update_path(major_section.id)}"
+      = render "major_section_list_item", major_section: major_section
+
+      ul.article-list ng-controller="ArticlesListCtrl"
+        - major_section.articles.each do |article|
+          = render "article_list_item", article: article
+
+      ul.minor-sections-list ng-controller="MinorSectionsListCtrl"
+        - major_section.minor_sections.ordered.each do |minor_section|
+          li data-url="#{minor_section_drag_update_path(minor_section.id)}"
+            = render "minor_section_list_item", minor_section: minor_section
+
+            ul.article-list ng-controller="ArticlesListCtrl"
+              - minor_section.articles.ordered.each do |article|
+                = render "article_list_item", article: article

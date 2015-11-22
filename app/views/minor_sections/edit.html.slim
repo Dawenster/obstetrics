@@ -1,0 +1,10 @@
+.row
+  .col-xs-12
+    h3
+      | Edit minor section
+
+    = render "form"
+
+    br
+    
+    = link_to "Delete".html_safe, { :id => @minor_section.id, :action => :destroy }, :method => :delete, data: { confirm: "Are you sure?  You're about to delete this minor section and all the articles associated with it..." }

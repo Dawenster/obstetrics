@@ -1,9 +1,28 @@
+.page-header {
+  i.fa-arrows {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}
+
+.major-section-actions {
+  margin-left: 15px;
+  i {
+    margin-right: 5px;
+  }
+}
+
+.major-sections-list, .minor-sections-list {
+  padding-left: 0px;  
+  list-style-type: none;
+}
+
 ul.article-list {
   padding: 0px;
+  list-style-type: none;
   
   .article-list-item {
     position: relative;
-    list-style-type: none;
 
     .action-links {
       position: absolute;

@@ -1,5 +1,28 @@
-= simple_form_for(@article) do |form|
-  = form.input :title
-  = form.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+.article-form-holder ng-controller="ArticlesFormCtrl"
+  = simple_form_for(@article) do |form|
+    = form.input :title
+    = form.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
 
-  = form.submit class: 'btn btn-success'
+    label
+      | Belongs to
+
+    br
+
+    div
+      .btn-group data-toggle="buttons"
+        label.btn.btn-primary.active ng-click="majorSectionClicked()"
+          input type="radio" name="section" id="majorSection" autocomplete="off" checked=""
+            | Major section
+        label.btn.btn-primary ng-click="minorSectionClicked()"
+          input type="radio" name="section" id="minorSection" autocomplete="off"
+            | Minor section
+
+    br
+
+    div ng-show="showMajorSection"
+      = form.association :major_section, prompt: "Select a major section to belong to"
+
+    div ng-show="!showMajorSection"
+      = form.association :minor_section, prompt: "Select a major section to belong to"
+
+    = form.submit class: 'btn btn-success'

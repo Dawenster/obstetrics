@@ -1,0 +1,7 @@
+h1.page-header
+  i.major-section-move-icon.fa.fa-arrows
+  = major_section.name
+  small.major-section-actions
+    a href="#{edit_major_section_path(major_section)}"
+      i.fa.fa-pencil-square-o
+    = link_to "<i class='fa fa-trash-o'></i>".html_safe, { :id => major_section.id, :action => :destroy }, :method => :delete, data: { confirm: "Are you sure?  You're about to delete this major section and all the minor sections and articles associated with it..." }

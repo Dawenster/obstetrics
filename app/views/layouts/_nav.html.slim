@@ -1,11 +1,5 @@
 = nav_bar brand: "Obstetrics", responsive: true do ||
   = menu_group do ||
-    = drop_down "Major Sections" do ||
-      = menu_item "All", major_sections_path
-      = menu_item "New", new_major_section_path
-    = drop_down "Minor Sections" do ||
-      = menu_item "All", minor_sections_path
-      = menu_item "New", new_minor_section_path
-    = drop_down "Articles" do ||
-      = menu_item "All", articles_path
-      = menu_item "New", new_article_path
+    = menu_item "New Major Section", new_major_section_path
+    = menu_item "New Minor Section", new_minor_section_path
+    = menu_item "New Article", new_article_path

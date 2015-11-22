@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @major_sections = MajorSection.rank(:row_order).all
     @articles = Article.rank(:row_order).all
   end
 
@@ -57,7 +58,9 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(
       :title,
-      :content
+      :content,
+      :major_section_id,
+      :minor_section_id
     )
   end
 end

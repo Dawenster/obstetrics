@@ -1,3 +1,13 @@
+ol.breadcrumb
+  - if @article.minor_section
+    li.active
+      = "Major section: #{@article.minor_section.major_section.name}"
+    li.active
+      = "Minor section: #{@article.minor_section.name}"
+  - elsif @article.major_section
+    li.active
+      = "Major section: #{@article.major_section.name}"
+
 h1
   = @article.title
 
