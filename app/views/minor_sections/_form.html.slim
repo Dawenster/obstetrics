@@ -1,4 +1,4 @@
 = simple_form_for(@minor_section) do |form|
   = form.input :name
-  = form.association :major_section, prompt: "Select a major section to belong to"
+  = form.association :major_section, include_blank: "Select a major section to belong to"
   = form.submit class: 'btn btn-success'

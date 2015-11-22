@@ -20,9 +20,9 @@
     br
 
     div ng-show="showMajorSection"
-      = form.association :major_section, prompt: "Select a major section to belong to"
+      = form.association :major_section, include_blank: "Select a major section to belong to"
 
     div ng-show="!showMajorSection"
-      = form.association :minor_section, prompt: "Select a major section to belong to"
+      = form.association :minor_section, include_blank: "Select a major section to belong to"
 
     = form.submit class: 'btn btn-success'
