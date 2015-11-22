@@ -4,7 +4,7 @@ ul.major-sections-list ng-controller="MajorSectionsListCtrl"
       = render "major_section_list_item", major_section: major_section
 
       ul.article-list ng-controller="ArticlesListCtrl"
-        - major_section.articles.each do |article|
+        - major_section.articles.ordered.each do |article|
           = render "article_list_item", article: article
 
       ul.minor-sections-list ng-controller="MinorSectionsListCtrl"
