@@ -1,7 +1,10 @@
 var app = angular.module('obstetrics');
 
 app.controller('MajorSectionsListCtrl', ['$scope', function($scope) {
-  $('.major-sections-list').sortable({handle: '.major-section-move-icon'}).bind('sortupdate', function(e, ui) {
+  $('.major-sections-list').sortable({
+    handle: '.major-section-move-icon',
+    forcePlaceholderSize: true
+  }).bind('sortupdate', function(e, ui) {
     var url = $(ui.item).data("url")
 
     $.ajax({

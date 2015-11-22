@@ -1,7 +1,9 @@
 var app = angular.module('obstetrics');
 
 app.controller('ArticlesListCtrl', ['$scope', function($scope) {
-  $('.article-list').sortable().bind('sortupdate', function(e, ui) {
+  $('.article-list').sortable({
+    forcePlaceholderSize: true
+  }).bind('sortupdate', function(e, ui) {
     var url = $(ui.item).data("url")
 
     $.ajax({
