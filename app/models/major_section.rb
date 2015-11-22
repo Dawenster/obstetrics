@@ -1,11 +1,11 @@
-class Article < ActiveRecord::Base
+class MajorSection < ActiveRecord::Base
   include RankedModel
   ranks :row_order
 
   after_create :rank_as_first
 
-  belongs_to :major_section
-  belongs_to :minor_section
+  has_many :articles
+  has_many :minor_sections
 
   def rank_as_first
     self.update_attribute :row_order_position, 0
