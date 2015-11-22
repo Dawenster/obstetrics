@@ -1,4 +1,4 @@
-.article-form-holder ng-controller="ArticlesFormCtrl"
+.article-form-holder ng-controller="ArticlesFormCtrl" data-has-minor-section="#{@article.minor_section_id.present?}"
   = simple_form_for(@article) do |form|
     = form.input :title
     = form.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
@@ -10,10 +10,10 @@
 
     div
       .btn-group data-toggle="buttons"
-        label.btn.btn-primary.active ng-click="majorSectionClicked()"
+        label.btn.btn-primary ng-click="majorSectionClicked()" ng-class="{'active': showMajorSection}"
           input type="radio" name="section" id="majorSection" autocomplete="off" checked=""
             | Major section
-        label.btn.btn-primary ng-click="minorSectionClicked()"
+        label.btn.btn-primary ng-click="minorSectionClicked()" ng-class="{'active': !showMajorSection}"
           input type="radio" name="section" id="minorSection" autocomplete="off"
             | Minor section
 

@@ -1,7 +1,11 @@
 var app = angular.module('obstetrics');
 
 app.controller('ArticlesFormCtrl', ['$scope', function($scope) {
-  $scope.showMajorSection = true
+  if ($(".article-form-holder").data("has-minor-section") == true) {
+    $scope.showMajorSection = false
+  } else {
+    $scope.showMajorSection = true
+  }
 
   $scope.majorSectionClicked = function() {
     $scope.showMajorSection = true
